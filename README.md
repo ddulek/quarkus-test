@@ -1,44 +1,28 @@
-# code-with-quarkus project
+# org.kie.kogito.kogito-quarkus-dm-archetype - 1.5.0.redhat-00006 #
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+# Running
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+- Compile and Run
 
-## Running the application in dev mode
+    ```
+     mvn clean package quarkus:dev
+    ```
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
+# Developing
 
-## Packaging and running the application
+Add your business assets resources (DRL, DMN, PMML) into src/main/resources.
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `code-with-quarkus-1.0.0-SNAPSHOT-runner.jar` file in the `/target` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/lib` directory.
+Add your java classes (data model, utilities, services) into src/main/java.
 
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
+Then just build the project and run.
 
-The application is now runnable using `java -jar target/code-with-quarkus-1.0.0-SNAPSHOT-runner.jar`.
 
-## Creating a native executable
+# OpenAPI (Swagger) documentation
+[Specification at swagger.io](https://swagger.io/docs/specification/about/)
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
+The exposed service [OpenAPI specification](https://swagger.io/docs/specification) is generated at 
+[/q/openapi](http://localhost:8080/q/openapi).
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
+You can visualize and interact with the generated specification using the embbeded [Swagger UI](http://localhost:8080/q/swagger-ui) or importing the generated specification file on [Swagger Editor](https://editor.swagger.io).
 
-You can then execute your native executable with: `./target/code-with-quarkus-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
+In addition client application can be easily generated from the swagger definition to interact with this service.

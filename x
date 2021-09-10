@@ -1,0 +1,1 @@
+mvn archetype:generate -DarchetypeGroupId=org.kie.kogito -DarchetypeArtifactId=kogito-quarkus-dm-archetype -DgroupId=org.acme -DartifactId=sample-kogito -DarchetypeVersion=1.5.0.redhat-00006 -Dversion=1.0-SNAPSHOT
